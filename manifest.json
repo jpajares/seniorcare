@@ -1,0 +1,18 @@
+{
+  "short_name": "SeniorCare",
+  "name": "SeniorCare",
+  "icons": [
+    {
+      "src": "/images/pwa-icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#888888",
+  "description": "An app to care for seniors.",
+  "orientation": "portrait"
+}
