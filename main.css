@@ -74,11 +74,11 @@ main #buttons {
 }
 
 #buttons > .big-button.medication {
-  background-image: url('./images/big-button-medication.png');
+  background-image: url('/images/big-button-medication.png');
 }
 
 #buttons > .big-button.games {
-  background-image: url('./images/big-button-games.png');
+  background-image: url('/images/big-button-games.png');
 }
 
 footer {
