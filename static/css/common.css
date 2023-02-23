@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > nav {
+  position: relative;
+}
+
+header > nav > ul {
+  transition: all 3s ease-in-out;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  text-align: left;
+  background-color: #333;
+}
+
+header > nav > ul.hidden {
+  transition: all 3s ease-in-out;
+  display: none;
+}
+
+header + * {
+  margin-top: 90px;
+}
+
+h1 {
+  margin: 0;
+}
+
+body > nav {
+  background-color: #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+body > nav ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body > nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+main {
+  position: relative;
+  padding: 20px;
+}
+
+main #buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main iframe {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#buttons > .big-button {
+  /*
+  flex-basis: calc(33.33% - 20px);
+  */
+  margin: 2px 0 2px 8px;
+  min-width: 110px;
+  padding: 5px;
+  height: 100px;
+  border: solid #333 5px;
+  border-radius: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#buttons > .big-button.medication {
+  background-image: url('/media/images/big-button-medication.png');
+}
+
+#buttons > .big-button.games {
+  background-image: url('/media/images/big-button-games.png');
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0px;
+  text-align: center;
+  margin-top: auto;
+}

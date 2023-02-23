@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <script>
+      const accelerationThreshold = 15;
+      window.addEventListener(
+        'devicemotion',
+        (event) => {
+          if (
+            Math.abs(event.acceleration.x) > accelerationThreshold ||
+            Math.abs(event.acceleration.y) > accelerationThreshold ||
+            Math.abs(event.acceleration.z) > accelerationThreshold
+          ) {
+            alert(`¡¿Te has caido?! (${event.acceleration.x}, ${event.acceleration.y}, ${event.acceleration.z})`);
+          }
+        },
+        false
+      );
+      /*
+      setTimeout(() => {document.querySelector('h2').innerHTML = `JEJEJE`}, 1000);
+      setTimeout(
+        () => {
+          let event = new DeviceMotionEvent('devicemotion');
+          document.querySelector('h2').innerHTML = `(${event.acceleration.x}, ${event.acceleration.y}, ${event.acceleration.z})`
+        },
+        2000
+      );
+      */
+    </script>
+  </head>
+  <body>
+    <header>
+      <img src="/images/logo.png" id="logo"></img>
+      <h1 id="title">SeniorCare</h1>
+      <img src="/images/avatar.png" id="avatar"></img>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Juegos</a></li>
+        <li><a href="#">Medicación</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Hola Cristina</h2>
+      <p>Esta es la página de bienvenida de tu espacio SeniorCare.</p>
+      <p>Explora las distintas secciones de la aplicación usando el menú superior.</p>
+      <div class="big-button" class="pills"></div>
+      <div class="big-button" class="pills"></div>
+      <div class="big-button" class="pills"></div>
+      <div class="big-button" class="pills"></div>
+      <div class="big-button" class="pills"></div>
+      <div class="big-button" class="pills"></div>
+    </main>
+
+    <footer>
+      <p><b>&copy;SeniorCare</b> - eMBA ESIC Málaga - TFM Grupo1</p>
+    </footer>
+  </body>
+</html>
