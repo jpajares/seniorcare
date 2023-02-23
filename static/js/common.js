@@ -28,17 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdownLink.addEventListener("click", function(event) {
     event.preventDefault();
     const dropdownMenu = document.querySelector("header > nav > ul");
-    /*
-    if (dropdownMenu.style.display === 'block') {
+     if (dropdownMenu.style.display === 'block') {
       dropdownMenu.style.display = 'none';
     } else {
       dropdownMenu.style.display = 'block';
     }
-    */
+
+    /*
     if (dropdownMenu.classList.contains("hidden")) {
       dropdownMenu.classList.remove("hidden")
     } else {
       dropdownMenu.classList.add("hidden")
     }
+    */
   });
 });

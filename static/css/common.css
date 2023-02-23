@@ -34,7 +34,7 @@ header > nav > ul {
   transition: all 3s ease-in-out;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: -20px;
   list-style: none;
   margin: 0;
   padding: 5px;
