@@ -57,7 +57,7 @@ async function registerServiceWorker() {
         applicationServerKey: publicVapidKey,
     });
 
-    await fetch("http://expressjs-postgres-production-3bb5.up.railway.app/subscribe", {
+    await fetch("https://expressjs-postgres-production-3bb5.up.railway.app/subscribe", {
         method: "POST",
         body: JSON.stringify(subscription),
         headers: {
