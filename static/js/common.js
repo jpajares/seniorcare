@@ -43,3 +43,32 @@ document.addEventListener('DOMContentLoaded', function() {
     */
   });
 });
+
+
+const publicVapidKey = "BDaSJ9mh1KPL4jaXPLxAwZTlr4Xu_sGd5chTgrZAOrGuFmHFWQpkBPEX1alCXXVd6jW7UG1S3MXRf8RMwahJoDs"
+
+async function registerServiceWorker() {
+    const register = await navigator.serviceWorker.register("/service_worker.js", {
+        scope: "/"
+    });
+
+    const subscription = await register.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: publicVapidKey,
+    });
+
+    await fetch("http://expressjs-postgres-production-3bb5.up.railway.app/subscribe", {
+        method: "POST",
+        body: JSON.stringify(subscription),
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+}
+
+if("serviceWorker" in navigator) {
+    registerServiceWorker().catch(console.log)
+}
+
+
+
