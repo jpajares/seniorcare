@@ -179,9 +179,14 @@ button.secondary {
   padding: 10px;
 }
 
-popup.alert .popup-header {
-  background: #e1baba;
-  color: #880000;
+.popup.alert {
+  background: #EDDFDF
+}
+
+
+.popup.alert .popup-header {
+  background: #880000;
+  color: #FFFFFF;
 }
 
 .popup-header > h2 {
