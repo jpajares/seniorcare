@@ -22,8 +22,7 @@ window.addEventListener(
   <div class="popup-footer">
     <button id="cancel-alert">Estoy bien, cancelar alerta</button>
   </div>
-</div>
-        `;
+</div>`;
 
       const popupWrapper = document.createElement("div");
       popupWrapper.classList.add("popup-wrapper");
@@ -121,7 +120,7 @@ async function registerServiceWorker() {
     }
   );
 
-  async function askForPermission() {
+  async function askForPushPermission() {
     Notification.requestPermission().then(function (result) {
       if (result === "granted") {
         console.log("Permission granted");
@@ -150,50 +149,88 @@ async function registerServiceWorker() {
     });
   }
 
+  async function askForGeolocationPermission() {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        alert("<" + position.coords.latitude + "," + position.coords.longitude + ">");
+      },
+      () => {
+        // Handle permission denied or error
+        console.error(
+          "User denied geolocation permission or an error occurred."
+        );
+      }
+    );
+  }
+
   setTimeout(function () {
-    if (Notification.permission === "default") {
-      const popupHTML = `
-<div class="popup">
-  <div class="popup-header">
-    <h2>Activar Notificaciones</h2>
-  </div>
-  <div class="popup-content">
-    <p>Para recibir alertas que te ayuden a aprovechar mejor el cuidado que proporciona SeniorCare, activa las notificaciones.</p>
-  </div>
-  <hr>
-  <div class="popup-footer">
-    <button id="allow-button">Activar</button>
-    <button class="secondary" id="deny-button">Rechazar</button>
-  </div>
-</div>
-        `;
+    Promise.allSettled([
+      navigator.permissions.query({ name: "notifications" }),
+      navigator.permissions.query({ name: "geolocation" }),
+    ]).then((responses) => {
+      const [accepted, pending] = responses.reduce(
+        (acc, cur) =>
+          cur["value"]["state"] === "prompt"
+            ? [acc[0], acc[1].concat(cur["value"]["name"])]
+            : cur["value"]["state"] === "granted"
+            ? [acc[0].concat(cur["value"]["name"]), acc[1]]
+            : acc,
+        [[], []]
+      );
+      if (pending.length) {
+        const popupHTML = `
+        <div class="popup">
+          <div class="popup-header">
+            <h2>Activar Notificaciones</h2>
+          </div>
+          <div class="popup-content">
+            <p>Para habilitar un mejor el cuidado proporcionado por SeniorCare, activa ${pending
+              .map((permission) =>
+                permission === "geolocation"
+                  ? "la geolocalización"
+                  : "las notificaciones"
+              )
+              .join(" y ")}.</p>
+          </div>
+          <hr>
+          <div class="popup-footer">
+            <button id="allow-button">Activar</button>
+            <button class="secondary" id="deny-button">En otro momento</button>
+          </div>
+        </div>`;
 
-      const popupWrapper = document.createElement("div");
-      popupWrapper.classList.add("popup-wrapper");
-      popupWrapper.innerHTML = popupHTML;
+        const popupWrapper = document.createElement("div");
+        popupWrapper.classList.add("popup-wrapper");
+        popupWrapper.innerHTML = popupHTML;
 
-      document.querySelector("body").appendChild(popupWrapper);
+        document.querySelector("body").appendChild(popupWrapper);
 
-      popupWrapper
-        .querySelector("#allow-button")
-        .addEventListener("click", () => {
-          popupWrapper.style.display = "none";
-          askForPermission().then(() => {});
+        popupWrapper
+          .querySelector("#allow-button")
+          .addEventListener("click", () => {
+            popupWrapper.style.display = "none";
+            if (pending.includes("notifications")) {
+              askForPushPermission().then(() => {});
+            }
+            if (pending.includes("geolocation")) {
+              askForGeolocationPermission().then(() => {});
+            }
+          });
+
+        popupWrapper
+          .querySelector("#deny-button")
+          .addEventListener("click", () => {
+            popupWrapper.style.display = "none";
+          });
+
+        popupWrapper.addEventListener("click", (event) => {
+          if (event.target === popupWrapper) {
+            popupWrapper.style.display = "none";
+          }
         });
-
-      popupWrapper
-        .querySelector("#deny-button")
-        .addEventListener("click", () => {
-          popupWrapper.style.display = "none";
-        });
-
-      popupWrapper.addEventListener("click", (event) => {
-        if (event.target === popupWrapper) {
-          popupWrapper.style.display = "none";
-        }
-      });
-    }
-  }, 5000);
+      }
+    });
+  }, 3000);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
