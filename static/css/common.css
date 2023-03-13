@@ -121,8 +121,24 @@ main iframe {
   background-image: url('/media/images/big-button-medication.png');
 }
 
+#buttons > .big-button.caretakers {
+  background-image: url('/media/images/big-button-caretakers.png');
+}
+
 #buttons > .big-button.games {
   background-image: url('/media/images/big-button-games.png');
+}
+
+#buttons > .big-button.geofence {
+  background-image: url('/media/images/big-button-geofence.png');
+}
+
+#buttons > .big-button.settings {
+  background-image: url('/media/images/big-button-settings.png');
+}
+
+#buttons > .big-button.sos {
+  background-image: url('/media/images/big-button-sos.png');
 }
 
 footer {

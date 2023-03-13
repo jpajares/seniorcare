@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="icon" type="image/png" href="/media/images/favicon.png">
+    <script src="/static/js/common.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/"><img src="/media/images/logo.png" id="logo"></img></a>
+      <a href="/"><h1 id="title">SeniorCare</h1></a>
+      <nav>
+        <a href="#"><img src="/media/images/avatar.png" id="avatar"></img></a>
+        <ul class="hidden">
+          <li><b>Cristina</b></li>
+          <li><hr></li>
+          <li>Perfil</li>
+          <li>Configuración</li>
+          <li><hr></li>
+          <li>Ayuda</li>
+        </ul>
+      </nav>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/games/sudoku">Juegos</a></li>
+        <li><a href="/medication" type="text/html">Medicación</a></li>
+        <li><a href="/geofence" type="text/html">Encuéntrame</a></li>
+        <li><a href="/caretaker" type="text/html">Cuidador</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <span id="location_message"></span>
+      <div style="position: relative">
+        <iframe width="320" height="450" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      </div>
+    </main>
+
+    <footer>
+      <p><b>&copy;SeniorCare</b> - eMBA ESIC Málaga - TFM Grupo1</p>
+    </footer>
+  </body>
+  <script>
+navigator.permissions.query({ name: "geolocation" }).then(response =>{
+  if (response["state"] === "granted") {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        document.querySelector("#gmap_canvas").src = `https://maps.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}&z=17&output=embed`
+        document.querySelector("#location_message").textContent = `Estás a ${distance(position.coords.latitude, position.coords.longitude, ...homeCoordinates).toFixed(1)}km de tu casa`;
+      },
+      error => {
+        document.querySelector("#gmap_canvas").src = `https://maps.google.com/maps?q=${homeCoordinates[0]},${homeCoordinates[1]}&z=17&output=embed`
+        document.querySelector("#location_message").textContent = `Esta es la ubicación de tu casa. Debes dar permiso a la aplicación para poder localizarte a ti.`;
+      }
+    );
+  } else {
+    document.querySelector("#gmap_canvas").src = `https://maps.google.com/maps?q=${homeCoordinates[0]},${homeCoordinates[1]}&z=17&output=embed`
+    document.querySelector("#location_message").textContent = `Esta es la ubicación de tu casa. Debes dar permiso a la aplicación para poder localizarte a ti.`;
+  }
+})
+
+  </script>
+</html>
