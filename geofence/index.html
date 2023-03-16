@@ -27,19 +27,19 @@
     <nav>
       <ul>
         <li><a href="/games/sudoku">Juegos</a></li>
-        <li><a href="/medication" type="text/html">Medicación</a></li>
-        <li><a href="/geofence" type="text/html">Encuéntrame</a></li>
-        <li><a href="/caretaker" type="text/html">Cuidador</a></li>
+        <li><a href="/medication">Medicación</a></li>
+        <li><a href="/geofence" class="active">Localízame</a></li>
+        <li><a href="/caretaker">Cuidador</a></li>
       </ul>
     </nav>
 
     <main>
-      <span id="location_message"></span>
+      <p id="location_message"></p>
       <div style="position: relative">
         <iframe width="320" height="450" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
       </div>
     </main>
-
+    <div id="sos_button"><a href="#">SOS</a></div>
     <footer>
       <p><b>&copy;SeniorCare</b> - eMBA ESIC Málaga - TFM Grupo1</p>
     </footer>

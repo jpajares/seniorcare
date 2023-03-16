@@ -10,6 +10,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
   justify-content: flex-start;
+  background-image: radial-gradient(rgb(121, 122, 147) 0.5px, rgb(222, 222, 230) 0.5px);
+  background-size: 10px 10px;
 }
 
 a {
@@ -23,12 +25,16 @@ header {
   width: 100%;
   background-color: #333;
   color: #FFFFFF;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 99;
+  z-index: 9;
+  background: linear-gradient(45deg, #1a1a1a 25%, #222222 25%, #222222 50%, #1a1a1a 50%, #1a1a1a 75%, #222222 75%);
+  background-size: auto;
+  background-size: 80px 80px;
+  box-shadow: 0 2px 2px #888;
 }
 
 header a {
@@ -40,19 +46,18 @@ header > nav {
 }
 
 header > nav > ul {
-  transition: all 3s ease-in-out;
   position: absolute;
-  top: 100%;
-  right: -20px;
+  top: calc(100% + 5px);
+  right: -10px;
   list-style: none;
   margin: 0;
   padding: 5px;
   text-align: left;
   background-color: #333;
+  border: 2px #555555 solid;
 }
 
 header > nav > ul.hidden {
-  transition: all 3s ease-in-out;
   display: none;
 }
 
@@ -68,6 +73,7 @@ body > nav {
   background-color: #eee;
   padding: 10px;
   text-align: center;
+  box-shadow: 0 2px 2px #555;
 }
 
 body > nav ul {
@@ -84,6 +90,11 @@ body > nav li {
 
 body > nav a {
   color: #333;
+  font-size: 13px;
+}
+
+body > nav a.active {
+  font-weight: bold;
 }
 
 main {
@@ -97,52 +108,71 @@ main #buttons {
   justify-content: space-between;
 }
 
+main p#location_message {
+  font-weight: bold;
+}
+
 main iframe {
   position: absolute;
   left: 50%;
+  border: 2px solid #b1b1b1;
   transform: translate(-50%, 0);
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+main iframe#sudoku {
+  padding: 20px 0 0 0;
+}
+
+main h2.game_name {
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
 #buttons > .big-button {
   /*
   flex-basis: calc(33.33% - 20px);
   */
-  margin: 2px 0 2px 8px;
-  min-width: 110px;
+  margin: 3px 3px 3px 3px;
+  min-width: 100px;
   padding: 5px;
   height: 100px;
-  border: solid #333 5px;
+  border: solid #b1b1b1 2px;
   border-radius: 10px 10px;
   background-repeat: no-repeat;
   background-position: center center;
+  box-shadow: 2px 2px 4px black;
 }
 
 #buttons > .big-button.medication {
-  background-image: url('/media/images/big-button-medication.png');
+  background-image: url('/media/images/big-button-medication.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
 #buttons > .big-button.caretakers {
-  background-image: url('/media/images/big-button-caretakers.png');
+  background-image: url('/media/images/big-button-caretakers.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
 #buttons > .big-button.games {
-  background-image: url('/media/images/big-button-games.png');
+  background-image: url('/media/images/big-button-games.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
 #buttons > .big-button.geofence {
-  background-image: url('/media/images/big-button-geofence.png');
+  background-image: url('/media/images/big-button-geofence.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
 #buttons > .big-button.settings {
-  background-image: url('/media/images/big-button-settings.png');
+  background-image: url('/media/images/big-button-settings.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
 #buttons > .big-button.sos {
-  background-image: url('/media/images/big-button-sos.png');
+  background-image: url('/media/images/big-button-sos.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
 footer {
-  background-color: #333;
+  background: linear-gradient(45deg, #1a1a1a 25%, #222222 25%, #222222 50%, #1a1a1a 50%, #1a1a1a 75%, #222222 75%);
+  background-size: 80px 80px;
+  border-top: 2px #888888 solid;
   color: #fff;
   padding: 10px 0px;
   text-align: center;
@@ -185,6 +215,7 @@ button.secondary {
   right: 0;
   backdrop-filter: blur(3px);
   background: #88888888;
+  z-index: 99;
 }
 
 .popup {
@@ -223,4 +254,50 @@ button.secondary {
 
 .popup-footer {
   padding: 0 10px 10px 10px;
+}
+
+#sos_button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #cda8a899;
+  overflow: hidden;
+  background: #ca2121;
+  box-shadow: 0 0 4px #000000;
+  position: fixed;
+  bottom: 50px;
+  left: 5px;
+  background-clip: padding-box;
+}
+
+#sos_button a {
+  display: block;
+  float: left;
+  width: 100%;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  line-height: 1em;
+  margin-top: -0.5em;
+  text-align: center;
+  color: #e2eaf3;
+  font-family: Verdana;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#sos_button.enabled {
+  animation: fade 2s infinite;
+}
+
+@keyframes fade {
+  0% {
+    border-color: #cda8a899;
+  }
+  50% {
+    border-color: #88000099;
+  }
+  100% {
+    border-color: #cda8a899;
+  }
 }
