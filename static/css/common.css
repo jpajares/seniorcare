@@ -113,12 +113,11 @@ main p#location_message {
 }
 
 main iframe {
-  position: absolute;
-  left: 50%;
   border: 2px solid #b1b1b1;
-  transform: translate(-50%, 0);
   background: #FFFFFF;
   border-radius: 20px;
+  display: block;
+  margin: 0 auto;
 }
 
 main iframe#sudoku {
