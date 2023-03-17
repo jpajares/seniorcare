@@ -168,6 +168,30 @@ main h2.game_name {
   background-image: url('/media/images/big-button-sos.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
+#buttons > .big-button.sudoku {
+  background-image: url('/media/images/games_sudoku.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+#buttons > .big-button.go {
+  background-image: url('/media/images/games_go.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+#buttons > .big-button.connect4 {
+  background-image: url('/media/images/games_connect4.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+#buttons > .big-button.tictactoe {
+  background-image: url('/media/images/games_tictactoe.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+#buttons > .big-button.tetris {
+  background-image: url('/media/images/games_tetris.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+#buttons > .big-button.chess {
+  background-image: url('/media/images/games_chess.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
 footer {
   background: linear-gradient(45deg, #1a1a1a 25%, #222222 25%, #222222 50%, #1a1a1a 50%, #1a1a1a 75%, #222222 75%);
   background-size: 80px 80px;
