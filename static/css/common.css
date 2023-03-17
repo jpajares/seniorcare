@@ -61,6 +61,10 @@ header > nav > ul.hidden {
   display: none;
 }
 
+header > nav > ul > li {
+  margin: 5px;
+}
+
 header + * {
   margin-top: 90px;
 }
