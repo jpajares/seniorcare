@@ -365,3 +365,28 @@ document.addEventListener("DOMContentLoaded", function () {
     el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  inputContainer = document.querySelector(".input-container");
+  messageInput = document.querySelector("textarea");
+  sendButton = document.querySelector("button");
+
+  sendButton.addEventListener("click", function () {
+    const message = messageInput.value;
+    if (message) {
+      const newMessage = document.createElement("div");
+      newMessage.classList.add("message", "user");
+      newMessage.innerHTML =
+        '<div class="message-time"></div><div class="message-text"></div>';
+      newMessage.querySelector(".message-time").textContent =
+        new Date().toLocaleTimeString("es-ES", {
+          hour12: false,
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      newMessage.querySelector(".message-text").textContent = message;
+      inputContainer.insertAdjacentElement("afterend", newMessage);
+      messageInput.value = "";
+    }
+  });
+});

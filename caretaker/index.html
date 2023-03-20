@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="icon" type="image/png" href="/media/images/favicon.png">
+    <script src="/static/js/common.js?v=1.0.1"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/"><img src="/media/images/logo.png" id="logo"></img></a>
+      <a href="/"><h1 id="title">SeniorCare</h1></a>
+      <nav>
+        <a href="#"><img src="/media/images/avatar.png" id="avatar"></img></a>
+        <ul class="hidden">
+          <li><b>Cristina</b></li>
+          <li><hr></li>
+          <li>Perfil</li>
+          <li>Configuración</li>
+          <li><hr></li>
+          <li>Ayuda</li>
+        </ul>
+      </nav>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/games">Juegos</a></li>
+        <li><a href="/medication">Medicación</a></li>
+        <li><a href="/geofence">Localízame</a></li>
+        <li><a href="/caretaker" class="active">Cuidador</a></li>
+      </ul>
+    </nav>
+
+    <main class="caretaker">
+      <div class="profile">
+        <div class="info-block">
+          <img src="/media/images/caretaker-avatar.jpg">
+          <h2>Estefanía</h2>
+        </div>
+        <div class="info-block">
+          <p><img src="/media/images/bullet-calendar.png">&nbsp;Lunes a Viernes</p>
+          <p><img src="/media/images/bullet-clock.png">&nbsp;10:00 a 14:00</p>
+          <hr>
+          <div class="duties">
+            <img src="/media/images/caretaker-duty-cleaning.png">
+            <img src="/media/images/caretaker-duty-accompaining.png">
+            <img src="/media/images/caretaker-duty-1staids.png">
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="input-container">
+          <textarea placeholder="Escribe aquí..."></textarea>
+          <button>Envíar</button>
+        </div>
+        <div class="message user">
+          <div class="message-time">Ayer 14:32</div>
+          <div class="message-text">Gracias Estefanía, pasa una buena tarde.</div>
+        </div>
+        
+        <div class="message response">
+          <div class="message-text">Hola Cristina, ya salí de casa. Bajé la basura.</div>
+          <div class="message-time">Ayer 14:15</div>
+        </div>
+      </div>
+    </main>
+    <div id="sos_button"><a href="#">SOS</a></div>
+    <footer>
+      <p><b>&copy;SeniorCare</b> - eMBA ESIC Málaga - TFM Grupo1</p>
+    </footer>
+  </body>
+</html>
