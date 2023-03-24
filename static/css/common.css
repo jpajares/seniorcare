@@ -491,6 +491,8 @@ main.caretaker > .profile > .info-block > div > img {
   margin: -3px 0 0 -3px;
   border-radius: 50%;
   display: none;
+  border: 1px solid #FFF;
+  box-shadow: 2px 2px 2px #555;
 }
 
 #next-turn {
