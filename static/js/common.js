@@ -34,7 +34,7 @@ window.addEventListener(
       document.querySelector("body").appendChild(popupWrapper);
 
       const counter = popupWrapper.querySelector(".countdown");
-      let count = 20;
+      let count = 10;
       let isTicking = true;
 
       function updateCounter() {
