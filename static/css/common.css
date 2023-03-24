@@ -133,10 +133,7 @@ main h2.game_name {
   text-align: center;
 }
 
-#buttons > .big-button {
-  /*
-  flex-basis: calc(33.33% - 20px);
-  */
+.big-button {
   margin: 3px 3px 3px 3px;
   min-width: 100px;
   padding: 5px;
@@ -148,52 +145,79 @@ main h2.game_name {
   box-shadow: 2px 2px 4px black;
 }
 
-#buttons > .big-button.medication {
+.big-button.medication {
   background-image: url('/media/images/big-button-medication.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.caretakers {
+.big-button.caretakers {
   background-image: url('/media/images/big-button-caretakers.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.games {
+.big-button.games {
   background-image: url('/media/images/big-button-games.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.geofence {
+.big-button.geofence {
   background-image: url('/media/images/big-button-geofence.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.settings {
+.big-button.settings {
   background-image: url('/media/images/big-button-settings.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.sos {
+.big-button.sos {
   background-image: url('/media/images/big-button-sos.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.sudoku {
+.big-button.sudoku {
   background-image: url('/media/images/games_sudoku.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.go {
+.big-button.go {
   background-image: url('/media/images/games_go.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.connect4 {
+.big-button.connect4 {
   background-image: url('/media/images/games_connect4.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.tictactoe {
+.big-button.tictactoe {
   background-image: url('/media/images/games_tictactoe.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.tetris {
+.big-button.tetris {
   background-image: url('/media/images/games_tetris.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
 }
 
-#buttons > .big-button.chess {
+.big-button.chess {
   background-image: url('/media/images/games_chess.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+.big-button.pill-1 {
+  background-image: url('/media/images/medication-1.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+.big-button.pill-2 {
+  background-image: url('/media/images/medication-2.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+.big-button.pill-3 {
+  background-image: url('/media/images/medication-3.png'), linear-gradient(45deg, #E5E5E5 25%, #EEEEEE 25%, #EEEEEE 50%, #E5E5E5 50%, #E5E5E5 75%, #EEEEEE 75%);
+}
+
+.big-button.pill-1.pending {
+  background-image: url('/media/images/medication-1.png'), linear-gradient(45deg, #F4CBCB 25%, #FFE0E0 25%, #FFE0E0 50%, #F4CBCB 50%, #F4CBCB 75%, #FFE0E0 75%);
+  box-shadow: 2px 2px 4px #880000;
+}
+
+.big-button.pill-2.pending {
+  background-image: url('/media/images/medication-2.png'), linear-gradient(45deg, #F4CBCB 25%, #FFE0E0 25%, #FFE0E0 50%, #F4CBCB 50%, #F4CBCB 75%, #FFE0E0 75%);
+  box-shadow: 2px 2px 4px #880000;
+}
+
+.big-button.pill-3.pending {
+  background-image: url('/media/images/medication-3.png'), linear-gradient(45deg, #F4CBCB 25%, #FFE0E0 25%, #FFE0E0 50%, #F4CBCB 50%, #F4CBCB 75%, #FFE0E0 75%);
+  box-shadow: 2px 2px 4px #880000;
 }
 
 footer {
@@ -443,4 +467,37 @@ main.caretaker > .profile > .info-block > div > img {
 
 .chat .message.user .message-time {
   margin: 0 10px 0 0;
+}
+
+.medication-grid {
+  display: grid;
+  grid-template-columns: 106px 1fr;
+  grid-gap: 10px;
+}
+
+.medication-grid > .big-button {
+  
+}
+
+.medication-grid > .medication-instructions {
+  
+}
+
+.notification-medication {
+  width: 10px;
+  height: 10px;
+  background: #C00;
+  position: absolute;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  display: none;
+}
+
+#next-turn {
+  display: none;
+}
+
+#next-turn > button {
+  margin: 10px auto 0 auto;
+  display: block;
 }
