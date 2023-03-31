@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     timeTextElement.textContent = `Próxima toma a las ${String(
       ((Math.floor((new Date().getHours() + 1) / 8) + 1) * 8 + 23) % 24
     ).padStart(2, "0")}:00`;
+    timeTextElement.classList.remove("pending");
   });
   let pendingPills = localStorage.getItem("pendingPills");
 
@@ -15,10 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
     timeTextElement.textContent = `Próxima toma a las ${String(
       ((Math.floor((new Date().getHours() + 1) / 8) + 1) * 8 + 23) % 24
     ).padStart(2, "0")}:00`;
+    timeTextElement.classList.remove("pending");
   } else {
     timeTextElement.textContent = `Toma de las ${String(
       (Math.floor((new Date().getHours() + 1) / 8) * 8 + 23) % 24
     ).padStart(2, "0")}:00 pendiente`;
+    timeTextElement.classList.add("pending");
     if (pendingPills === "") {
       nextTurnButton.style.display = "block";
     }
@@ -49,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       } else {
         event.target.classList.add("pending");
+        timeTextElement.classList.add("pending");
         timeTextElement.textContent = `Toma de las ${String(
           (Math.floor((new Date().getHours() + 1) / 8) * 8 + 23) % 24
         ).padStart(2, "0")}:00 pendiente`;
